@@ -1,0 +1,49 @@
+.cxck{
+    margin:10px;
+}
+.red{
+    color: red;
+    display: block;
+}
+.pola{
+    width:50%;
+    margin-left: 25%;
+}
+.pad{
+    padding: 20px;
+}
+.kontejner{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+.lista{
+    flex-grow: 4;
+    border-left:solid rgb(41, 134, 165) 3px;
+    border-right:solid rgb(41, 134, 165) 3px;
+}
+.filter{
+    flex-grow: 1;
+}
+.dodaj{
+    flex-grow: 1;
+}
+.big{
+    font-size:35px;
+}
+.small{
+    font-size: 25px;
+}
+.margtop{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+}
+.signup{
+    border:solid rgb(41, 134, 165) 5px;
+flex-grow: 1;
+}
+.login{
+    border:solid rgb(41, 134, 165) 5px;
+    flex-grow: 1;
+}

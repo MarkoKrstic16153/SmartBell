@@ -1,0 +1,28 @@
+.kontejner{
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    margin: 0px;
+    color: white;
+  background-color: rgb(41, 134, 165);  
+  padding: 30px;
+  font-size: 45px;
+  text-decoration: underline;
+}
+.plavo{
+    background-color: rgb(41, 134, 165);  
+    display: flex;
+    flex-direction: row;
+}
+a{
+    flex-grow: 1;
+    color :rgb(41, 134, 165);
+    background-color: white;
+    border-top:35px solid rgb(41, 134, 165);
+    border-bottom:30px solid rgb(41, 134, 165);
+    border-left:110px solid rgb(41, 134, 165);
+    border-right:110px solid rgb(41, 134, 165);
+    font-size: 30px;
+    padding: 3px;
+}

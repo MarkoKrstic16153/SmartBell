@@ -1,0 +1,24 @@
+.cxck{
+    margin:10px;
+}
+.red{
+    color: red;
+    display: block;
+}
+.kontejner{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+.lista{
+    flex-grow: 3;
+    border-left:solid rgb(41, 134, 165) 3px;
+    border-right:solid rgb(41, 134, 165) 3px;
+}
+.filter{
+flex-grow: 1;
+}
+.dodaj{
+flex-grow: 1;
+}
+

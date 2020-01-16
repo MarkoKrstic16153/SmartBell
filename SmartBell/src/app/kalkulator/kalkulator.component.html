@@ -1,0 +1,69 @@
+
+<article>
+    <h2>Protein/Kalorije Kalkulator</h2>
+<p>
+    <mat-form-field>  
+        <mat-label>Pol</mat-label>
+      <mat-select [(value)]="pol" value="Muski">
+          <mat-option value="Muski">
+              Muski
+            </mat-option>
+            <mat-option value="Zenski">
+                Zenski
+              </mat-option>
+      </mat-select>
+    </mat-form-field>
+</p>
+
+<p>
+    <mat-form-field>
+        <input (keyup)="onKeyGodine($event)"
+        matInput placeholder="Unesite Godine" value="{{noviEmail}}" required > 
+        
+      </mat-form-field>
+      <mat-label class="red" *ngIf="greskaGodine">Ovo polje je obavezno!</mat-label>
+      </p>
+
+      <p>
+          <mat-form-field>
+              <input (keyup)="onKeyVisina($event)"
+              matInput placeholder="Unesite Visinu(cm)" value="{{noviEmail}}" required > 
+              
+            </mat-form-field>
+            <mat-label class="red" *ngIf="greskaVisina">Ovo polje je obavezno!</mat-label>
+            </p>
+
+            <p>
+                <mat-form-field>
+                    <input (keyup)="onKeyTezina($event)"
+                    matInput placeholder="Unesite Tezinu(kg)" value="{{noviEmail}}" required > 
+                    
+                  </mat-form-field>
+                  <mat-label class="red" *ngIf="greskaTezina">Ovo polje je obavezno!</mat-label>
+                  </p>
+                  <p>
+                      <mat-form-field>  
+                          <mat-label>Nivo aktivnosti</mat-label>
+                        <mat-select [(value)]="nivoAktivnosti" >
+                            <mat-option *ngFor="let aktivnost of aktivnosti" [value]="aktivnost">
+                                {{aktivnost}}
+                              </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                  </p>
+
+                  <p>
+                      <mat-form-field>  
+                          <mat-label>Zeljeni Cilj</mat-label>
+                        <mat-select [(value)]="zeljeniCilj" >
+                            <mat-option *ngFor="let cilj of ciljevi" [value]="cilj">
+                                {{cilj}}
+                              </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                  </p>
+
+<p *ngIf="greskaGodine==false && greskaTezina==false && greskaVisina==false && nivoAktivnosti!='' && pol!='' && zeljeniCilj!=''"><button  mat-raised-button color="primary" (click)="izracunaj()">Izracunaj</button></p>
+<p *ngIf="izracunato"><label class="velikaSlova">Vasa dnevna kalorijska potreba je {{kalorije.toFixed(1)}} kcal.</label></p>
+ <p *ngIf="izracunato"><label class="velikaSlova">Vasa Proteinska potreba je {{proteini.toFixed(1)}} grama dnevno.</label></p>
+</article>

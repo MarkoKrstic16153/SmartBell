@@ -1,0 +1,24 @@
+<h3>Podesavanje Profila</h3>
+
+<label *ngIf="load">Vas Username je : {{user.id}}</label>
+<p>
+<mat-form-field>
+    <input (keyup)="onKeyPassword($event)"
+    matInput placeholder="unesite novi Password" type="password" value="{{noviPassword}}" required > 
+    
+  </mat-form-field>
+  <mat-label class="red" *ngIf="greskaPassword">Ovo polje je obavezno!</mat-label>
+  </p>
+  <p>
+      <mat-form-field>
+          <input (keyup)="onKeyEmail($event)"
+          matInput placeholder="Email" value="{{noviEmail}}" required > 
+          
+        </mat-form-field>
+        <mat-label class="red" *ngIf="greskaEmail">Ovo polje je obavezno!</mat-label>
+        </p>
+        <p >    
+ <button class="marg" *ngIf="noviEmail!='' && noviPassword!=''" mat-raised-button color="primary" (click)="save()">Sacuvaj Promene</button>
+ <button class="margina"  mat-raised-button color="primary" (click)="nazad()">Nazad</button>
+        </p>
+       

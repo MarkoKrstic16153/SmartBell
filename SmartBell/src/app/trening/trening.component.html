@@ -1,0 +1,14 @@
+<article [class.mojaKlasa]="detalji==true" (click)="posalji()">
+<p >
+ <label> Vrsta Treninga : {{trening.vrstaTreninga}} Datum : {{trening.datum.substring(0,10)}}  </label>
+  </p>
+  <p (click)="posalji()">
+   <label> Potroseno Kalorija : {{trening.kalorije.toFixed(1)}} </label>
+    </p>
+    <p *ngIf="detalji==true">
+    <label class="doleMargina">Odradjen je sledeci Volume : </label>
+      <mat-list-item *ngFor="let vezba of trening.delovi">
+      <mat-label> {{vezba.naziv}} : {{vezba.serije}} Serija , {{vezba.repeticije}} Ponavljanja , {{vezba.opterecenje}} kg.</mat-label>
+        </mat-list-item>
+    </p>
+</article>

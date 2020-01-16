@@ -1,0 +1,13 @@
+.okvir{
+    color: white;
+    background-color: rgb(41, 134, 165);  
+    padding: 30px;
+}
+.doleMargina{
+    margin-bottom:10px;
+    margin-top: 10px;
+    font-size:22px;
+}
+.mojaKlasa{
+    border:solid rgb(41, 134, 165) 3px;
+}

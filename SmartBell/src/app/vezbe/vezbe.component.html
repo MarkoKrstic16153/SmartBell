@@ -1,0 +1,64 @@
+<article class="kontejner">
+  <article class="filter">
+    <h2>Filtrirajte Vezbe</h2>
+    <label>Filtriraj po Opremi</label>
+      <p>
+        <mat-checkbox class="cxck" (change)="fteg($event)">Tegovi</mat-checkbox>
+        <mat-checkbox class="cxck" (change)="fmas($event)">Masine</mat-checkbox>
+        <mat-checkbox class="cxck" (change)="fkond($event)">Kondicija</mat-checkbox>
+        <button (click)="boolFilter()" mat-raised-button color="primary">Filtriraj</button>
+      <button (click)="vratiPocetneVezbe()" mat-stroked-button color="primary">Ocisti</button>
+        </p>
+        <p>
+        <label>Filtriraj po Misicima</label>
+        </p>
+      <mat-form-field>  
+          <mat-label>Misicne grupe</mat-label>
+        <mat-select [(value)]="filter">
+            <mat-option *ngFor="let misic of misici" [value]="misic">
+                {{misic}}
+              </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button (click)="filtriraj()" mat-raised-button color="primary">Filtriraj</button>
+      <button (click)="vratiPocetneVezbe()" mat-stroked-button color="primary">Ocisti</button>
+    </article>
+  <article class="lista">
+  <h2>Lista Vezbi {{sufix}}</h2>
+  <mat-list-item *ngFor="let vezba of vezbe$ | async">
+    <app-vezba [vezba]="vezba" [vise]="selektovanaVezba==vezba.id"></app-vezba>
+  </mat-list-item>
+  </article>
+<article class="dodaj">
+  <h2>Dodaj novu Vezbu</h2>
+  <p><mat-form-field>
+    <input (keyup)="onKey($event)"
+    matInput placeholder="Ime Vezbe" required > 
+    
+  </mat-form-field>
+  <mat-label class="red" *ngIf="greska">Ovo polje je obavezno!</mat-label></p>
+  <p>
+  <mat-checkbox class="cxck" (change)="teg($event)">Koristi Tegove</mat-checkbox>
+  <mat-checkbox class="cxck" (change)="mas($event)">Koristi Masine</mat-checkbox>
+  <mat-checkbox class="cxck" (change)="kond($event)">Pojacava kondiciju</mat-checkbox>
+  </p>
+  <mat-form-field>  
+      <mat-label>Misicne grupe</mat-label>
+    <mat-select [(value)]="novapartija">
+        <mat-option *ngFor="let misic of misici" [value]="misic">
+            {{misic}}
+          </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button (click)="addGrupu()" mat-raised-button color="primary">Dodaj grupu</button>
+  
+  <h4>Vasa Vezba pogadja sledece Misice</h4>
+  <mat-list-item *ngFor="let partija of trenutnaUkupnaPartija">
+    <label>{{partija}}</label> <button (click)="delGrupu(partija)" mat-button color="warn">Obrisi grupu</button>
+  </mat-list-item>
+  <mat-label class="red" *ngIf="trenutnaUkupnaPartija.length==0">Vasa vezba mora pogadjati par jedan misic!</mat-label>
+  <p *ngIf="trenutnaUkupnaPartija.length!=0 && greska==false"><button (click)="addVezba()" mat-raised-button color="primary">Dodajte Vezbu</button></p>
+  </article>
+</article>
+  
+

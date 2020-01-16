@@ -1,0 +1,18 @@
+<article [class.mojaKlasa]="vise" (click)="detalji()">
+  <h4 (click)="detalji()">Naziv vezbe :{{vezba.naziv}}</h4> 
+  <div *ngIf="vise">
+  <p>
+  <label>Koristi tegove : {{teg}}.</label></p>
+  <p>
+  <label>Koristi masine : {{mas}}.</label></p>
+  <p>
+  <label>Pojacava kondiciju : {{kond}}.</label></p>
+  <p>Koriste se sledeci misici :</p>
+  <p class="okvir">
+  <mat-list-item *ngFor="let misic of vezba.misiceKojiPogadja">
+    {{misic}}
+  </mat-list-item>
+  </p>
+</div>
+  <button mat-button color="warn" (click)="delVezbu()">Obrisi</button>
+</article>

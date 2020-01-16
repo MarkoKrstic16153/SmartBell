@@ -1,0 +1,324 @@
+{
+  "movies": [
+    {
+      "id": "2",
+      "title": "Spectre1",
+      "score": 8.6
+    },
+    {
+      "id": "3",
+      "title": "Spectre2",
+      "score": 8.7
+    },
+    {
+      "title": "Stereo Love",
+      "score": 9,
+      "id": "Stereo Love"
+    }
+  ],
+  "vezbe": [
+    {
+      "id": "Bench Press",
+      "naziv": "Bench Press",
+      "koristiMasine": false,
+      "koristiTegove": true,
+      "pojacavaKondiciju": false,
+      "misiceKojiPogadja": [
+        "Grudi",
+        "Triceps",
+        "Ramena"
+      ]
+    },
+    {
+      "id": "Cucanj",
+      "naziv": "Cucanj",
+      "koristiMasine": false,
+      "koristiTegove": true,
+      "pojacavaKondiciju": true,
+      "misiceKojiPogadja": [
+        "Loza",
+        "Butine",
+        "Listovi"
+      ]
+    },
+    {
+      "id": "Mrtvo Dizanje",
+      "naziv": "Mrtvo Dizanje",
+      "koristiMasine": false,
+      "koristiTegove": true,
+      "pojacavaKondiciju": true,
+      "misiceKojiPogadja": [
+        "Butine",
+        "Loza",
+        "Trapezi",
+        "Lepeze",
+        "Podlaktica"
+      ]
+    },
+    {
+      "id": "Zgib",
+      "naziv": "Zgib",
+      "koristiMasine": false,
+      "koristiTegove": false,
+      "pojacavaKondiciju": false,
+      "misiceKojiPogadja": [
+        "Trapezi",
+        "Lepeze",
+        "Biceps",
+        "Podlaktica",
+        "Trbusnjaci"
+      ]
+    },
+    {
+      "id": "Propadanje",
+      "naziv": "Propadanje",
+      "koristiMasine": false,
+      "koristiTegove": false,
+      "pojacavaKondiciju": true,
+      "misiceKojiPogadja": [
+        "Grudi",
+        "Triceps",
+        "Ramena"
+      ]
+    },
+    {
+      "id": "Vojna Presa",
+      "naziv": "Vojna Presa",
+      "koristiMasine": false,
+      "koristiTegove": true,
+      "pojacavaKondiciju": true,
+      "misiceKojiPogadja": [
+        "Ramena",
+        "Triceps",
+        "Trapezi",
+        "Grudi"
+      ]
+    },
+    {
+      "id": "Rucni Pregib",
+      "naziv": "Rucni Pregib",
+      "koristiMasine": false,
+      "koristiTegove": true,
+      "pojacavaKondiciju": true,
+      "misiceKojiPogadja": [
+        "Podlaktica",
+        "Biceps"
+      ]
+    },
+    {
+      "id": "Rucna Extenzija",
+      "naziv": "Rucna Extenzija",
+      "koristiMasine": false,
+      "koristiTegove": true,
+      "pojacavaKondiciju": false,
+      "misiceKojiPogadja": [
+        "Triceps"
+      ]
+    },
+    {
+      "id": "Sklek",
+      "naziv": "Sklek",
+      "koristiMasine": false,
+      "koristiTegove": false,
+      "pojacavaKondiciju": false,
+      "misiceKojiPogadja": [
+        "Triceps",
+        "Ramena",
+        "Grudi",
+        "Trbusnjaci"
+      ]
+    },
+    {
+      "id": "Extenzija Listova",
+      "naziv": "Extenzija Listova",
+      "koristiMasine": false,
+      "koristiTegove": true,
+      "pojacavaKondiciju": false,
+      "misiceKojiPogadja": [
+        "Listovi"
+      ]
+    },
+    {
+      "id": "Veslanje Masinom",
+      "naziv": "Veslanje Masinom",
+      "koristiMasine": true,
+      "koristiTegove": false,
+      "pojacavaKondiciju": false,
+      "misiceKojiPogadja": [
+        "Biceps",
+        "Trapezi",
+        "Lepeze"
+      ]
+    },
+    {
+      "id": "Veslanje Tegom",
+      "naziv": "Veslanje Tegom",
+      "koristiMasine": false,
+      "koristiTegove": true,
+      "pojacavaKondiciju": true,
+      "misiceKojiPogadja": [
+        "Lepeze",
+        "Trapezi",
+        "Loza",
+        "Podlaktica",
+        "Biceps"
+      ]
+    },
+    {
+      "id": "Skotov Pregib",
+      "naziv": "Skotov Pregib",
+      "koristiMasine": true,
+      "koristiTegove": true,
+      "pojacavaKondiciju": false,
+      "misiceKojiPogadja": [
+        "Biceps"
+      ]
+    },
+    {
+      "id": "Nozni Pregib",
+      "naziv": "Nozni Pregib",
+      "koristiMasine": true,
+      "koristiTegove": false,
+      "pojacavaKondiciju": false,
+      "misiceKojiPogadja": [
+        "Loza",
+        "Listovi"
+      ]
+    },
+    {
+      "id": "Nozna Extenzija",
+      "naziv": "Nozna Extenzija",
+      "koristiMasine": true,
+      "koristiTegove": false,
+      "pojacavaKondiciju": false,
+      "misiceKojiPogadja": [
+        "Butine",
+        "Trbusnjaci"
+      ]
+    },
+    {
+      "id": "Veslanje T Sipkom",
+      "naziv": "Veslanje T Sipkom",
+      "koristiMasine": false,
+      "koristiTegove": true,
+      "pojacavaKondiciju": true,
+      "misiceKojiPogadja": [
+        "Lepeze",
+        "Trapezi",
+        "Butine",
+        "Loza",
+        "Biceps"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "Marko",
+      "password": "marko",
+      "email": "marko@emial.com"
+    },
+    {
+      "id": "Nikola",
+      "password": "nikola",
+      "email": "NIkola@elfak.rs"
+    },
+    {
+      "id": "Petar",
+      "password": "petar",
+      "email": "mojemail@gmail.com"
+    },
+    {
+      "id": "a",
+      "password": "b",
+      "email": "ffffffffffffffffffffffffff"
+    },
+    {
+      "id": "hello",
+      "password": "world",
+      "email": "google.google@coms.rs"
+    }
+  ],
+  "trenings": [
+    {
+      "vrstaTreninga": "Push",
+      "delovi": [
+        {
+          "naziv": "Cucanj",
+          "opterecenje": 99,
+          "serije": 7,
+          "repeticije": 7
+        },
+        {
+          "naziv": "Bench Press",
+          "opterecenje": 100,
+          "serije": 6,
+          "repeticije": 8
+        }
+      ],
+      "kalorije": 22.628181166347993,
+      "datum": "2019-06-07T16:35:18.024Z",
+      "user": "a",
+      "id": 1
+    },
+    {
+      "vrstaTreninga": "Legs",
+      "delovi": [
+        {
+          "naziv": "Mrtvo Dizanje",
+          "opterecenje": 300,
+          "serije": 3,
+          "repeticije": 4
+        }
+      ],
+      "kalorije": 8.440726577437859,
+      "datum": "2019-06-18T22:00:00.000Z",
+      "user": "a",
+      "id": 2
+    },
+    {
+      "vrstaTreninga": "Pull",
+      "delovi": [
+        {
+          "naziv": "Mrtvo Dizanje",
+          "opterecenje": 101,
+          "serije": 4,
+          "repeticije": 9
+        },
+        {
+          "naziv": "Mrtvo Dizanje",
+          "opterecenje": 101,
+          "serije": 4,
+          "repeticije": 9
+        },
+        {
+          "naziv": "Zgib",
+          "opterecenje": 101,
+          "serije": 4,
+          "repeticije": 9
+        },
+        {
+          "naziv": "Zgib",
+          "opterecenje": 101,
+          "serije": 4,
+          "repeticije": 9
+        },
+        {
+          "naziv": "Veslanje T Sipkom",
+          "opterecenje": 101,
+          "serije": 4,
+          "repeticije": 9
+        },
+        {
+          "naziv": "Veslanje T Sipkom",
+          "opterecenje": 101,
+          "serije": 4,
+          "repeticije": 9
+        }
+      ],
+      "kalorije": 51.15080305927343,
+      "datum": "2019-06-14T22:36:33.708Z",
+      "user": "a",
+      "id": 3
+    }
+  ]
+}

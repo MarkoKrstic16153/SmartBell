@@ -1,0 +1,135 @@
+<div *ngIf="ulogovan==false" class="margtop">
+  <article class="login">
+<h2>Dobrodosli nazad, ulogujte se ...</h2>
+<h3>Login</h3>
+<p><mat-form-field>
+    <input (keyup)="onKeyUsername($event)"
+    matInput placeholder="Username" required > 
+  </mat-form-field>
+  <mat-label class="red" *ngIf="greskaUsername">Ovo polje je obavezno!</mat-label></p>
+  
+<p>
+    <mat-form-field>
+        <input matInput placeholder="Sifra" type="password" (keyup)="onKeyPassword($event)"/>
+    </mat-form-field>
+     </p>
+     <p class="red" *ngIf="loginGreska">Netacna Username/Password kombinacija.</p>
+    <p *ngIf="greskaUsername==false && password.length!=0"> <button (click)="loguj()" mat-raised-button color="primary">Login</button></p>
+    </article>  
+    <article class="signup">
+<h2>Nemate Nalog, napravite ga ...</h2>
+    <h3>Sign up</h3>
+    <p><mat-form-field>
+        <input (keyup)="onKeyUsernameS($event)"
+        matInput placeholder="Username"  > 
+      </mat-form-field>
+    </p>
+       <p>
+          <mat-form-field>
+              <input matInput placeholder="Sifra" type="password" (keyup)="onKeyPasswordS($event)"/>
+          </mat-form-field>
+      </p>  
+      <p><mat-form-field>
+          <input (keyup)="onKeyEmail($event)"
+          matInput placeholder="Email" > 
+          <span matSuffix>@email.com</span>
+        </mat-form-field>
+      </p>
+      <p class="red" *ngIf="signInGreska">Username je vec zauzet, izberite novi.</p>
+      <p *ngIf="noviUsername.length!=0 && noviPassword.length!=0 && noviEmail.length!=0"> <button (click)="signup()" mat-raised-button color="primary">Sign up</button></p>
+      </article>
+</div>
+<div *ngIf="ulogovan==true" class="kontejner">
+    <article class="filter">
+        <h2>Filtrirajte Vase Treninge</h2>
+    <p>
+        <mat-form-field>  
+            <mat-label>Tip treninga</mat-label>
+          <mat-select [(value)]="filterZaTreninge">
+              <mat-option *ngFor="let vrsta of vrste" [value]="vrsta">
+                  {{vrsta}}
+                </mat-option>
+          </mat-select>
+        </mat-form-field>
+    </p>
+    <p>
+      <button (click)="pretrazi()"  mat-raised-button color="primary">Filtriraj</button><button (click)="ocisti()"  mat-stroked-button color="primary">Ocisti</button>
+      </p>
+      </article>
+  <article class="lista">
+  <h1 ><label class="big">Dobrodosli {{trenutnoUlogovani}} !</label> <a class="small" href="/trenings/{{trenutnoUlogovani}}"> Podesavanje Naloga</a> </h1>
+  
+    <h2>Lista vasih {{staPrikazuje}} treninga : </h2>
+    <h4>Trenutno ste odradili {{trenutniBrojTreninga}} {{staPrikazuje}} treninga, gde ste potrosili ukupno {{subKalorije.toFixed(1)}} kalorija.</h4>
+    <mat-list-item  *ngFor="let trening of treninzi$ | async">
+      <app-trening class="pad" [trening]="trening" [detalji]="selektovaniId==trening.id"></app-trening>
+    </mat-list-item >
+    </article>
+  <article class="dodaj">
+    <h2>Dodajte novi Trening</h2>
+<p>
+    <mat-form-field>  
+        <mat-label>Tip treninga</mat-label>
+      <mat-select [(value)]="vrstaTreninga">
+          <mat-option *ngFor="let vrsta of vrste" [value]="vrsta">
+              {{vrsta}}
+            </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="menjaj()">Prikazi Vezbe</button>
+</p>
+<p>
+    <mat-form-field>  
+        <mat-label>Izaberite vezbu</mat-label>
+      <mat-select [(value)]="trenutnaVezba">
+          <mat-option *ngFor="let vezba of ubaceneVezbe" [value]="vezba">
+              {{vezba}}
+            </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+<p>
+    <mat-form-field>
+        <input (dateChange)="ajde($event)" (dateInput)="ajde($event)" matInput [matDatepicker]="picker" placeholder="Izaberite Datum" [value]="date.value">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </p>
+    <div class="pola">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+           Volume Vezbe
+          </mat-panel-title>
+          <mat-panel-description>
+            Broj Serija,Repeticija i Opterecenje
+          </mat-panel-description>
+         
+        </mat-expansion-panel-header >
+    <p>
+        <mat-form-field>
+          <input matInput  (click)="serijes($event)" type="number" placeholder="Broj Serija">
+        </mat-form-field>
+        </p>
+    <p>
+        <mat-form-field>
+          <input matInput (click)="rep($event)"  type="number" placeholder="Broj Repeticija">
+        </mat-form-field>
+      </p>
+<p>
+        <mat-form-field>
+            <input  matInput (click)="opt($event)" type="number" placeholder="Opterecenje">
+          </mat-form-field>
+        </p>
+        <p *ngIf="repeticije!=0 && serije!=0 && tezina!=0 && trenutnaVezba!=''"><button mat-raised-button color="primary" (click)="dodajVolume()">Dodaj Volume</button></p>
+        <p>Trenutno ste potrosili {{kalorije}} kcal.</p>
+        <p> <label>Vas trening izgleda ovako :</label>
+          <li *ngFor="let deo of noviDelovi; index as i">
+            Naziv Vezbe : {{deo.naziv}} , Broj Serija : {{deo.serije}} , Broj Ponavljanja : {{deo.repeticije}} , Opterecenje : {{deo.opterecenje}} <button mat-button color="warn" (click)="delDeo(i)">Izbaci</button>
+          </li>
+        </p>
+      </mat-expansion-panel>
+    </div>
+      <p *ngIf="noviDelovi.length!=0"><button mat-raised-button color="primary" (click)="addTrening()">Prosledi Trening</button></p>
+ </article>
+    </div>
